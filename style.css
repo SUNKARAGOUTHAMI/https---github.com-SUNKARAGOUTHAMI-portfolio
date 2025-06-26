@@ -1,0 +1,381 @@
+
+    body {
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+
+    .light-mode {
+      background-color: #ffffff;
+      color: black;
+    }
+
+    .navbar-light-mode {
+      background-color: #f8f9fa;
+    }
+
+    .navbar-dark-mode {
+      background-color: #1f1f1f;
+    }
+
+    .theme-toggle-btn {
+      border: none;
+      background: none;
+      font-size: 1.5rem;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .social-icons {
+          position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+    }
+  .social-icons a {
+    color: #333;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+    
+      .social-icons a:hover {
+    background: black;
+    color: white;
+  }
+
+
+    .social-circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin: 5px;
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+
+    .light-mode .social-circle {
+      background-color: #e0e0e0;
+      color: #121212;
+    }
+
+    .dark-mode .social-circle {
+      background-color:#333;
+      color: #ffffff;
+    }
+    
+    .content {
+      padding-top: 100px;
+    }
+
+    .button {
+      border-radius: 5px;
+      height: 35px;
+      width: 150px;
+      margin: 5px;
+    }
+
+    .profile-image {
+      max-width: 100%;
+      height: auto;
+      z-index: 1;
+      margin-right:100px;
+    }
+    /* Underline animation for nav links */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #007bff; /* You can customize color */
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+
+/* Click feedback on navbar links */
+.nav-link.clicked::after {
+  width: 100% !important;
+  animation: click-underline 0.4s ease;
+}
+
+@keyframes click-underline {
+  0% {
+    width: 0;
+    left: 50%;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+    @media (max-width: 768px) {
+            .content {
+        text-align: center;
+        padding: 20px 15px;
+      }
+      .image-section {
+        margin-top: 30px;
+      }
+
+      .social-icons {
+      position: static;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      gap: 10px;
+      margin-top:30px;
+    }
+
+
+      
+
+      
+    @media (min-width: 769px) {
+    .social-icons {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      flex-direction: column;
+      z-index: 999;
+    }
+    .profile-image{
+      text-align:center;
+    }
+    
+
+  }
+/* Ripple effect for any click */
+.click-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 150, 255, 0.5);
+  transform: scale(0);
+  animation: ripple 0.6s ease-out;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Smooth hover animation for buttons and nav links */
+.button, .nav-link, .social-circle {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover, .nav-link:hover, .social-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Glow pulse effect when clicked */
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+  }
+}
+
+.animate-click {
+  animation: glow-pulse 0.6s ease-out;
+}
+
+/* Hover and click transition for navbar links and social icons */
+.nav-link, .social-circle {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.nav-link:hover, .social-circle:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.nav-link:active, .social-circle:active {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+}
+
+  
+  }
+
+    
+.email{
+        position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #333;
+    background: #f5f5f5;
+    padding: 8px 12px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    font-weight: 500;
+    z-index: 9999;
+    transition: all 0.3s ease;
+
+}
+/* Smooth scroll */
+    .about-section svg {
+      position: absolute;
+      z-index: -1;
+    }
+
+    .svg-gray-top-left {
+      top: -50px;
+      left: 0px;
+    }
+
+    .svg-yellow-right {
+      top: 10%;
+      right: 0px;
+    }
+
+    .svg-yellow-bottom {
+      bottom: -100px;
+      left: 100px;
+    }
+
+    .svg-gray-bottom-right {
+      bottom: -50px;
+      right: 100px;
+    }
+
+
+    @media (max-width: 768px) {
+      .theme-toggle {
+        top: 10px;
+        right: 15px;
+      }
+      .about-section {
+        text-align: center;
+      }
+      .about-section svg {
+        display: none;
+      }
+        .heading {
+          text-align:center;
+    font-size: 24px;
+  }
+
+  .paragraph {
+    text-align: center;
+  
+    font-size: 10px;
+    
+  }
+  .para{
+    text-align:center;
+  }
+
+  .img-fluid {
+    display:none;
+  }
+
+  #line {
+    width: 60%;
+  }
+
+   }
+.paragraph{
+    margin-right:-200px;
+    font-size:10px;
+}
+.heading{
+  font-size:30px;
+  margin-left:-200px;
+}
+
+  #line {
+  transition: background-color 0.5s ease;
+}
+
+
+body.light-mode #line {
+  background-color: black;
+}
+
+/* Dark Mode */
+body.dark-mode #line {
+  background-color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* About Section */
+.about-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Default About styles */
+.about-section {
+  transition: background-color 0.5s ease, color 0.5s ease;
+  border-radius: 12px;
+}
+
+/* Light theme */
+.about-section.light-theme {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+.img-fluid{
+    margin-left:-400px;
+    margin-top:-100px;
+}
+
+/* Dark theme */
+.about-section.dark-theme {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
